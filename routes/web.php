@@ -7,6 +7,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\Admin\PrivateController;
 use App\Http\Controllers\Admin\ProjectController;
+use App\Http\Controllers\Admin\TypeController;
 
 /*
 |--------------------------------------------------------------------------
@@ -28,6 +29,7 @@ Route::prefix('admin')
     ->middleware(['auth', 'verified'])
     ->group(function () {
     Route::resource('projects', ProjectController::class);
+    Route::resource('types', TypeController::class);
     Route::get('/dashboard', [PrivateController::class, 'dashboard'])->name('dashboard');
 });
 
