@@ -8,6 +8,9 @@ use App\http\controllers\Controller;
 //models
 use App\Models\Project;
 
+//requests
+use App\http\Requests\Project\StoreProjectRequest;
+
 class ProjectController extends Controller
 {
     /**
@@ -17,7 +20,7 @@ class ProjectController extends Controller
     {
         $projects = Project::all();
 
-        dd($projects);
+        return view('admin.projects.index', compact('projects'));
     }
 
     /**
@@ -25,23 +28,23 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.projects.create');
     }
 
     /**
      * Store a newly created resource in storage.
      */
-    public function store(Request $request)
+    public function store(StoreProjectRequest $request)
     {
-        //
+       
     }
 
     /**
      * Display the specified resource.
      */
-    public function show(string $id)
+    public function show(Project $project)
     {
-        //
+        
     }
 
     /**

@@ -17,7 +17,7 @@ return new class extends Migration
             $table->string('slug');
             $table->text('description');
             $table->date('start_date');
-            $table->date('end_date');
+            $table->date('end_date')->nullable();
             $table->string('project_status', 32);
             $table->string('languages');
             $table->string('project_link', 2083);
