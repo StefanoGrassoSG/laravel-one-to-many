@@ -17,6 +17,9 @@
                     <span class="fw-bold">NAME:</span> <span>{{ $project->name }}</span>
                 </div>
                 <div class="mb-1">
+                    <span class="fw-bold">TYPE:</span> <a href="{{ route('admin.types.show', ['type' => $project->type->id]) }}">{{ $project->type->name }}</a>
+                </div>
+                <div class="mb-1">
                     <span class="fw-bold">DESCRIPTION:</span> <span>{{ $project->description }}</span>
                 </div>
                 <div class="mb-1">

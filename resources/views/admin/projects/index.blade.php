@@ -37,7 +37,7 @@
                                 {{ $project->slug }}
                             </td>
                             <td>
-                                {{ $project->type->name }}
+                                <a href="{{ route('admin.types.show', ['type'=> $project->type->id]) }}">{{ $project->type->name }}</a>
                             </td>
                             <td>
                                 {{ $project->description }}
