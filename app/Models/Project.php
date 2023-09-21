@@ -17,6 +17,7 @@ class Project extends Model
         'end_date',
         'project_status',
         'languages',
-        'project_link'
+        'project_link',
+        'type_id'
     ];
 }
