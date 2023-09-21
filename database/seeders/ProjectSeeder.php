@@ -29,7 +29,8 @@ class ProjectSeeder extends Seeder
                 'end_date' => $project['end_date'],
                 'project_status' => $project['project_status'],
                 'languages' => implode(', ', $project['languages']),
-                'project_link' => $project['project_link']
+                'project_link' => $project['project_link'],
+                'type_id' => $project['type_id']
             ]);
         }
     }

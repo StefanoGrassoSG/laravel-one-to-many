@@ -12,7 +12,8 @@ return [
             'css',
             'javascript'
         ],
-        'project_link' => 'https://github.com/StefanoGrassoSG/js-social-posts'
+        'project_link' => 'https://github.com/StefanoGrassoSG/js-social-posts',
+        'type_id' => 3
     ],
     [
         'name' => 'memoryGame',
@@ -25,7 +26,8 @@ return [
             'css',
             'javascript'
         ],
-        'project_link' => 'https://github.com/StefanoGrassoSG/memoryGame'
+        'project_link' => 'https://github.com/StefanoGrassoSG/memoryGame',
+        'type_id' => 5
     ],
     [
         'name' => 'vite comics',
@@ -39,7 +41,8 @@ return [
             'javascript',
             'vue'
         ],
-        'project_link' => 'https://github.com/StefanoGrassoSG/memoryGame'
+        'project_link' => 'https://github.com/StefanoGrassoSG/memoryGame',
+        'type_id' => 3
     ],
     [
         'name' => 'template laravel breeze',
@@ -52,7 +55,8 @@ return [
             'html',
             'scss'
         ],
-        'project_link' => 'https://github.com/StefanoGrassoSG/memoryGame'
+        'project_link' => 'https://github.com/StefanoGrassoSG/memoryGame',
+        'type_id' => 1
     ],
     
     

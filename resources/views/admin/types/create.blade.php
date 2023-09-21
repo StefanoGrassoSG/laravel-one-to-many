@@ -8,7 +8,7 @@
             <h2 class="fw-bold">
                 Insert New Type Data
             </h2>
-            <form action="{{ route('admin.types.store') }}" method="POST" class="d-flex justify-content-center mt-5 mb-3">
+            <form action="{{ route('admin.types.store') }}" method="POST" class="mt-5 mb-3">
                 @csrf
                 <div class="w-50 me-2">
                     <div class="form-floating mb-3">
@@ -20,6 +20,11 @@
                             </div>
                         @enderror
                       </div>
+                </div>
+                <div>
+                    <button type="submit" class="btn btn-success mt-3">
+                        Save
+                    </button>
                 </div>
             </form>
         </div>

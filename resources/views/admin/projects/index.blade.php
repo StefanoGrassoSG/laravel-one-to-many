@@ -14,6 +14,7 @@
                     <th scope="col">ID</th>
                     <th scope="col">Name</th>
                     <th scope="col">Slug</th>
+                    <th scope="col">Type</th>
                     <th scope="col">Description</th>
                     <th scope="col">Start Date</th>
                     <th scope="col">End Date</th>
@@ -34,6 +35,9 @@
                             </td>
                             <td>
                                 {{ $project->slug }}
+                            </td>
+                            <td>
+                                {{ $project->type->name }}
                             </td>
                             <td>
                                 {{ $project->description }}

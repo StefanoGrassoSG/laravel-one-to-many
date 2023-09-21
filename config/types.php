@@ -12,5 +12,8 @@ return [
     ],
     [
         'name' => 'webapp'
+    ],
+    [
+        'name' => 'game'
     ]
 ];

@@ -8,6 +8,9 @@ use Illuminate\Database\Seeder;
 //models
 use App\Models\Type;
 
+//helpers
+use Illuminate\support\facades\Schema;
+
 class TypeSeeder extends Seeder
 {
     /**
@@ -15,7 +18,9 @@ class TypeSeeder extends Seeder
      */
     public function run(): void
     {
-        Type::truncate();
+        schema::withoutForeignKeyConstraints(function () {
+            Type::truncate();
+        });
 
         $types = config('types');
 

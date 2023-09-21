@@ -24,10 +24,10 @@
                                 <a class="nav-link" href="{{ route('admin.dashboard') }}">Dashboard</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="{{ route('admin.projects.index') }}">Go to all projects</a>
+                                <a class="nav-link" href="{{ route('admin.types.index') }}">Go to all types</a>
                             </li>
                             <li class="nav-item">
-                                <a class="nav-link" href="#">Link 3</a>
+                                <a class="nav-link" href="{{ route('admin.projects.index') }}">Go to all projects</a>
                             </li>
                         </ul>
                         <form method="POST" action="{{ route('logout') }}">

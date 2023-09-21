@@ -20,4 +20,11 @@ class Project extends Model
         'project_link',
         'type_id'
     ];
+
+     //RELATIONSHIPS
+
+    public function type() {
+
+        return $this->belongsTo(Type::class);
+    }
 }
