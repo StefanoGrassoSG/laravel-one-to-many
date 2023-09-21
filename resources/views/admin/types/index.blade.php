@@ -3,7 +3,7 @@
 @section('page-title', 'Type table')
 
 @section('main-content')
-    <div class="row d-flex justify-content-center">
+    <div class="row d-flex">
         <div class="col-auto">
             <a href="{{ route('admin.types.create')}}" class="btn btn-success mb-3">
                 +Add New Type

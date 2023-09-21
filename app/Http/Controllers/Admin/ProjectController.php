@@ -91,7 +91,8 @@ class ProjectController extends Controller
             'end_date' => $formData['end_date'],
             'project_status' => $formData['project_status'],
             'languages' => $formData['languages'],
-            'project_link' => $formData['project_link']
+            'project_link' => $formData['project_link'],
+            'type_id' => $formData['type_id']
         ]);
 
         return redirect()->route('admin.projects.show', compact('project'));
