@@ -6,7 +6,7 @@ use Illuminate\Support\Facades\Route;
 //controllers 
 use App\Http\Controllers\PublicController;
 use App\Http\Controllers\Admin\PrivateController;
-
+use App\Http\Controllers\Admin\ProjectController;
 
 /*
 |--------------------------------------------------------------------------
@@ -23,8 +23,13 @@ use App\Http\Controllers\Admin\PrivateController;
 Route::get('/', [PublicController::class, 'index'])->name('home');
 
 //private route
-Route::get('admin/dashboard', [PrivateController::class, 'dashboard'])
+Route::prefix('admin')
+    ->name('admin.')
     ->middleware(['auth', 'verified'])
-    ->name('admin.dashboard');
+    ->group(function () {
+    Route::resource('projects', ProjectController::class);
+    Route::get('/dashboard', [PrivateController::class, 'dashboard'])->name('dashboard');
+});
+
 
 require __DIR__.'/auth.php';
