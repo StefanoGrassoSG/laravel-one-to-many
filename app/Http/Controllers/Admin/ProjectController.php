@@ -7,6 +7,8 @@ use App\http\controllers\Controller;
 
 //models
 use App\Models\Project;
+use App\Models\Type;
+
 
 //requests
 use App\http\Requests\Project\StoreProjectRequest;
@@ -29,7 +31,9 @@ class ProjectController extends Controller
      */
     public function create()
     {
-        return view('admin.projects.create');
+        $types = Type::all();
+
+        return view('admin.projects.create', compact('types'));
     }
 
     /**
@@ -47,7 +51,8 @@ class ProjectController extends Controller
             'end_date' => $formdata['end_date'],
             'project_status' => $formdata['project_status'],
             'languages' => $formdata['languages'],
-            'project_link' => $formdata['project_link']
+            'project_link' => $formdata['project_link'],
+            'type_id' => $formdata['type_id']
        ]);
 
        return redirect()->route('admin.projects.index');
@@ -66,7 +71,9 @@ class ProjectController extends Controller
      */
     public function edit(Project $project)
     {   
-        return view('admin.projects.edit', compact('project'));
+        $types = Type::all();
+
+        return view('admin.projects.edit', compact('project', 'types'));
     }
 
     /**

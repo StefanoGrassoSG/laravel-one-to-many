@@ -31,7 +31,8 @@ class StoreProjectRequest extends FormRequest
             'end_date' => 'nullable',
             'project_status' => 'required',
             'languages' => 'required',
-            'project_link' => 'required'
+            'project_link' => 'required',
+            'type_id' => 'nullable|exists:types,id'
         ];
     }
 }

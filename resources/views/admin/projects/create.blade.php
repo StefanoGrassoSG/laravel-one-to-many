@@ -81,6 +81,20 @@
                             </div>
                         @enderror
                     </div>
+                    <div class="form-floating mt-3">
+                        <select class="form-select" id="floatingSelect" name="type_id" aria-label="Floating label select example">
+                          <option>Select a Type</option>
+                          @foreach ($types as $type)
+                              <option value="{{ $type->id }}" {{ old('type_id') == $type->id ?  'selected' : '' }}>{{ $type->name }}</option>
+                          @endforeach
+                        </select>
+                        <label for="floatingSelect">Type</label>
+                        @error('type_id')
+                            <div class="alert alert-danger mt-2">
+                                {{ $message }}
+                            </div>
+                        @enderror
+                    </div>
                 </div>
             </form>
         </div>

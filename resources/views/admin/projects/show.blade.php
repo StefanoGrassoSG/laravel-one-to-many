@@ -17,7 +17,12 @@
                     <span class="fw-bold">NAME:</span> <span>{{ $project->name }}</span>
                 </div>
                 <div class="mb-1">
-                    <span class="fw-bold">TYPE:</span> <a href="{{ route('admin.types.show', ['type' => $project->type->id]) }}">{{ $project->type->name }}</a>
+                    <span class="fw-bold">TYPE:</span> 
+                    @if ($project->type)
+                        <a href="{{ route('admin.types.show', ['type' => $project->type->id]) }}">{{ $project->type->name }}</a>
+                    @else
+                    -
+                    @endif
                 </div>
                 <div class="mb-1">
                     <span class="fw-bold">DESCRIPTION:</span> <span>{{ $project->description }}</span>

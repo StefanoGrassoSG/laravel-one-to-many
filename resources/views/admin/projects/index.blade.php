@@ -37,7 +37,11 @@
                                 {{ $project->slug }}
                             </td>
                             <td>
-                                <a href="{{ route('admin.types.show', ['type'=> $project->type->id]) }}">{{ $project->type->name }}</a>
+                                @if ($project->type)
+                                    <a href="{{ route('admin.types.show', ['type'=> $project->type->id]) }}">{{ $project->type->name }}</a>
+                                @else
+                                -
+                                @endif
                             </td>
                             <td>
                                 {{ $project->description }}

@@ -11,7 +11,7 @@ return [
         'name' => 'website',
     ],
     [
-        'name' => 'webapp'
+        'name' => 'web app'
     ],
     [
         'name' => 'game'
