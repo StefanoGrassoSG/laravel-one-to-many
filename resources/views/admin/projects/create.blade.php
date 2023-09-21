@@ -13,19 +13,39 @@
                 <div class="w-50 me-2">
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" name="name" id="floatingInput">
-                        <label for="floatingInput">Name</label>
+                        <label for="floatingInput">Name<span class="text-danger">*</span></label>
+                        @error('name')
+                            <div class="alert alert-danger mt-2">
+                                {{ $message }}
+                            </div>
+                        @enderror
                       </div>
                       <div class="form-floating">
                         <input type="text" class="form-control" name="description" id="floatingInput">
-                        <label for="floatingInput">Description</label>
+                        <label for="floatingInput">Description<span class="text-danger">*</span></label>
+                        @error('description')
+                            <div class="alert alert-danger mt-2">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <div class="form-floating mb-3 mt-3">
                         <input type="date" class="form-control" name="start_date" id="floatingInput">
-                        <label for="floatingInput">Start Date</label>
+                        <label for="floatingInput">Start Date<span class="text-danger">*</span></label>
+                        @error('start_date')
+                            <div class="alert alert-danger mt-2">
+                                {{ $message }}
+                            </div>
+                        @enderror
                       </div>
                       <div class="form-floating">
                         <input type="date" class="form-control" name="end_date" id="floatingInput">
                         <label for="floatingInput">End Date</label>
+                        @error('end_date')
+                            <div class="alert alert-danger mt-2">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <div>
                         <button type="submit" class="btn btn-success mt-3">
@@ -36,29 +56,33 @@
                 <div class="w-50 ms-2">
                     <div class="form-floating mb-3">
                         <input type="text" class="form-control" name="project_status" id="floatingInput">
-                        <label for="floatingInput">Project Status</label>
+                        <label for="floatingInput">Project Status<span class="text-danger">*</span></label>
+                        @error('project_status')
+                            <div class="alert alert-danger mt-2">
+                                {{ $message }}
+                            </div>
+                        @enderror
                       </div>
                       <div class="form-floating">
                         <input type="text" class="form-control" name="languages" id="floatingInput">
-                        <label for="floatingInput">Languages</label>
+                        <label for="floatingInput">Languages<span class="text-danger">*</span></label>
+                        @error('languages')
+                            <div class="alert alert-danger mt-2">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                     <div class="form-floating mt-3">
                         <input type="text" class="form-control" name="project_link" id="floatingInput">
-                        <label for="floatingInput">Project Link</label>
+                        <label for="floatingInput">Project Link<span class="text-danger">*</span></label>
+                        @error('project_link')
+                            <div class="alert alert-danger mt-2">
+                                {{ $message }}
+                            </div>
+                        @enderror
                     </div>
                 </div>
             </form>
-            @if($errors->any())
-                <div class="alert alert-danger">
-                    <ul>
-                        @foreach ($errors->all() as $error)
-                            <li>
-                                {{ $error }}
-                            </li>
-                        @endforeach
-                    </ul>
-                </div>
-             @endif
         </div>
     </div>
 @endsection
