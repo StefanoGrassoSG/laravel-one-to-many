@@ -10,6 +10,7 @@ use App\Models\Project;
 
 //requests
 use App\http\Requests\Project\StoreProjectRequest;
+use App\http\Requests\Project\UpdateProjectRequest;
 
 class ProjectController extends Controller
 {
@@ -57,30 +58,45 @@ class ProjectController extends Controller
      */
     public function show(Project $project)
     {
-        
+        return view('admin.projects.show', compact('project'));
     }
 
     /**
      * Show the form for editing the specified resource.
      */
-    public function edit(string $id)
-    {
-        //
+    public function edit(Project $project)
+    {   
+        return view('admin.projects.edit', compact('project'));
     }
 
     /**
      * Update the specified resource in storage.
      */
-    public function update(Request $request, string $id)
+    public function update(UpdateProjectRequest $request, Project $project)
     {
-        //
+        $formData = $request->validated();
+
+        $project->update([
+            'name' => $formData['name'],
+            'slug' => str()->slug($formData['name']),
+            'description' => $formData['description'],
+            'start_date' => $formData['start_date'],
+            'end_date' => $formData['end_date'],
+            'project_status' => $formData['project_status'],
+            'languages' => $formData['languages'],
+            'project_link' => $formData['project_link']
+        ]);
+
+        return redirect()->route('admin.projects.show', compact('project'));
     }
 
     /**
      * Remove the specified resource from storage.
      */
-    public function destroy(string $id)
+    public function destroy(Project $project)
     {
-        //
+        $project->delete();
+
+        return redirect()->route('admin.projects.index');
     }
 }
