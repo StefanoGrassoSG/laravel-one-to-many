@@ -19,7 +19,7 @@ return new class extends Migration
             $table->date('start_date');
             $table->date('end_date');
             $table->string('project_status', 32);
-            $table->jsonb('languages');
+            $table->string('languages');
             $table->string('project_link', 2083);
             $table->timestamps();
         });
