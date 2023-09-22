@@ -19,7 +19,6 @@ return new class extends Migration
             $table->date('start_date');
             $table->date('end_date')->nullable();
             $table->string('project_status', 32);
-            $table->string('languages');
             $table->string('project_link', 2083);
             $table->timestamps();
         });
